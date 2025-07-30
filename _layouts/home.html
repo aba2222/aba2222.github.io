@@ -1,0 +1,23 @@
+---
+layout: page
+title: home
+---
+
+<head>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+
+<div class="container">
+  <h2>Recent Posts</h2>
+  <ul>
+    {% for post in site.posts limit:5 %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
+</div>
