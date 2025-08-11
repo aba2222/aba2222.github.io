@@ -2,7 +2,8 @@
 layout: post
 title:  "Improving the Appearance of Win32 Controls"
 date:   2025-05-03 19:30:00 +0800
-categories: jekyll update
+categories: blogs
+tag: win32 blog
 ---
 
 The controls in the Win32 API are outdated and visually unappealing. However, there are several ways to improve them.
