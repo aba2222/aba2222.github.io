@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "The Something of Gprof"
+date:   2025-08-24 16:15:00 +0800
+categories: blogs
+tag: gprof blog
+---
+
+The `gprof` is a performance analysis tool from GNU. And it is easy to use.
+
+It just needs insert `-pg` when compiler.
+
+```bash
+gcc -pg -o a_program a_program.c
+```
+
+When it has run. It while generate a file named `gmon.out`. It need to be a text file.
+
+```bash
+gprof a_program gmon.out > analysis.txt
+```
+
+Then open the `analysis.txt`,  it will look like it:
+
+```text
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 50.16     19.85    19.85 413822162     0.00     0.00  possible_destination(int (*) [9], int, int)
+ 12.28     24.71     4.86        1     4.86    37.71  alpha_beta_search(int (*) [9], int, bool, float, float)
+  9.10     28.31     3.60 72230986     0.00     0.00  valid_coordinate(int (*) [9], bool)
+```
+
+You can analysis where should improve in your program.
